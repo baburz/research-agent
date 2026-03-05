@@ -1,10 +1,9 @@
 """
 Research Agent built with LangGraph
 ------------------------------------
-A multi-step agent that:
 1. Takes a user question
 2. Decides if it needs to search the web
-3. Searches using Tavily (or falls back to DuckDuckGo)
+3. Searches using Tavily
 4. Evaluates if results are sufficient
 5. Re-searches with a refined query if needed (max 3 hops)
 6. Returns a cited, structured answer
@@ -53,8 +52,8 @@ class AgentState(TypedDict):
     search_queries: list[str]                 # all queries tried so far
     search_results: list[dict]                # raw results from search tool
     hop_count: int                            # how many search rounds done
-    sufficient: bool                          # did we get enough info?
-    final_answer: str                         # assembled final response
+    sufficient: bool                          # get enough info?
+    final_answer: str                         # final response
 
 
 MAX_HOPS = 3  # max search rounds before forcing an answer
@@ -73,7 +72,7 @@ def plan_node(state: AgentState) -> AgentState:
     Generate an optimised search query from the user's question.
     Also decides if web search is even needed.
     """
-    log.info("📋 PLAN  — crafting search query")
+    log.info("PLAN  — crafting search query")
     llm = build_llm()
 
     system = SystemMessage(content="""You are a research planner.
@@ -98,15 +97,14 @@ def plan_node(state: AgentState) -> AgentState:
 
 # ── Node: search ───────────────────────────────────────────────────────────
 def search_node(state: AgentState) -> AgentState:
-    """Execute the latest search query and accumulate results."""
     query = state["search_queries"][-1]
-    log.info(f"🔍 SEARCH [hop {state['hop_count'] + 1}] — '{query}'")
+    log.info(f"SEARCH [hop {state['hop_count'] + 1}] — '{query}'")
 
     tool = build_search_tool()
     raw = tool.invoke(query)
 
     if isinstance(raw, str):
-        log.warning("⚠️ Search tool returned a string. Normalizing to list...")
+        log.warning("Search tool returned a string. Normalizing to list...")
         raw = [{"content": raw, "url": "N/A"}]
     # -----------------------
 
@@ -123,10 +121,10 @@ def search_node(state: AgentState) -> AgentState:
 # ── Node: evaluate ─────────────────────────────────────────────────────────
 def evaluate_node(state: AgentState) -> AgentState:
     """
-    Ask the LLM: are the current search results sufficient to answer the question?
-    If not, generate a refined query.
+    Asks the LLM: are the current search results sufficient to answer the question?
+    If not, generates a refined query.
     """
-    log.info("🧐 EVALUATE — checking result sufficiency")
+    log.info("EVALUATE — checking result sufficiency")
     llm = build_llm()
 
     snippets = "\n\n".join(
@@ -162,7 +160,7 @@ def evaluate_node(state: AgentState) -> AgentState:
 # ── Node: answer ───────────────────────────────────────────────────────────
 def answer_node(state: AgentState) -> AgentState:
     """Synthesize a final cited answer from all search results."""
-    log.info("✍️  ANSWER — synthesising final response")
+    log.info("ANSWER — synthesising final response")
     llm = build_llm()
 
     snippets = "\n\n".join(
@@ -228,7 +226,7 @@ def run_agent(question: str) -> dict:
     Returns a dict with 'answer', 'sources_searched', 'hops'.
     """
     log.info(f"\n{'='*60}")
-    log.info(f"❓ Question: {question}")
+    log.info(f"Question: {question}")
     log.info(f"{'='*60}")
 
     agent = build_graph()
@@ -268,6 +266,6 @@ if __name__ == "__main__":
 
     print("\n" + "="*60)
     print(result["answer"])
-    print(f"\n🔍 Searched {result['hops']} round(s) with queries:")
+    print(f"\nSearched {result['hops']} round(s) with queries:")
     for q in result["queries_used"]:
         print(f"   • {q}")

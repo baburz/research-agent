@@ -1,11 +1,11 @@
 2026-02-28 23:28:46,688  INFO      
 ============================================================
-2026-02-28 23:28:46,688  INFO      ❓ Question: When did Atatürk die?
+2026-02-28 23:28:46,688  INFO      Question: When did Atatürk die?
 2026-02-28 23:28:46,688  INFO      ============================================================
-2026-02-28 23:28:46,703  INFO      📋 PLAN  — crafting search query
+2026-02-28 23:28:46,703  INFO      PLAN  — crafting search query
 2026-02-28 23:28:48,414  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 23:28:48,453  INFO         needs_search=False  query='Atatürk death date'
-2026-02-28 23:28:48,455  INFO      ✍️  ANSWER — synthesising final response
+2026-02-28 23:28:48,455  INFO      ANSWER — synthesising final response
 2026-02-28 23:28:50,453  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 23:28:50,455  INFO         Answer generated ✓
 2026-02-28 23:28:50,456  INFO      RESULT

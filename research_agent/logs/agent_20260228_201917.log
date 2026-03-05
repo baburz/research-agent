@@ -1,27 +1,27 @@
 2026-02-28 20:19:17,620  INFO      
 ============================================================
-2026-02-28 20:19:17,620  INFO      ❓ Question: What are the most 10 popular RAG techniques used in 2026?
+2026-02-28 20:19:17,620  INFO      Question: What are the most 10 popular RAG techniques used in 2026?
 2026-02-28 20:19:17,620  INFO      ============================================================
-2026-02-28 20:19:17,652  INFO      📋 PLAN  — crafting search query
+2026-02-28 20:19:17,652  INFO      PLAN  — crafting search query
 2026-02-28 20:19:19,155  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 20:19:19,202  INFO         needs_search=True  query='RAG techniques 2026 popularity'
-2026-02-28 20:19:19,206  INFO      🔍 SEARCH [hop 1] — 'RAG techniques 2026 popularity'
+2026-02-28 20:19:19,206  INFO      SEARCH [hop 1] — 'RAG techniques 2026 popularity'
 2026-02-28 20:19:23,302  INFO         Retrieved 4 results  (total: 4)
-2026-02-28 20:19:23,304  INFO      🧐 EVALUATE — checking result sufficiency
+2026-02-28 20:19:23,304  INFO      EVALUATE — checking result sufficiency
 2026-02-28 20:19:24,651  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 20:19:24,669  INFO         sufficient=False  reason='The search results do not provide a clear list of the 10 most popular RAG techniques used in 2026.'
-2026-02-28 20:19:24,673  INFO      🔍 SEARCH [hop 2] — 'RAG techniques 2026 popularity ranking'
+2026-02-28 20:19:24,673  INFO      SEARCH [hop 2] — 'RAG techniques 2026 popularity ranking'
 2026-02-28 20:19:27,863  INFO         Retrieved 4 results  (total: 8)
-2026-02-28 20:19:27,863  INFO      🧐 EVALUATE — checking result sufficiency
+2026-02-28 20:19:27,863  INFO      EVALUATE — checking result sufficiency
 2026-02-28 20:19:29,233  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 20:19:29,233  INFO         sufficient=False  reason='The search results do not provide a clear list of the top 10 popular RAG techniques used in 2026.'
-2026-02-28 20:19:29,233  INFO      🔍 SEARCH [hop 3] — 'Top RAG optimization techniques 2026, RAG evaluation tools 2026, RAG frameworks 2026, RAG search engine tools 2026'
+2026-02-28 20:19:29,233  INFO      SEARCH [hop 3] — 'Top RAG optimization techniques 2026, RAG evaluation tools 2026, RAG frameworks 2026, RAG search engine tools 2026'
 2026-02-28 20:19:33,279  INFO         Retrieved 4 results  (total: 12)
-2026-02-28 20:19:33,279  INFO      🧐 EVALUATE — checking result sufficiency
+2026-02-28 20:19:33,279  INFO      EVALUATE — checking result sufficiency
 2026-02-28 20:19:34,615  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 20:19:34,620  INFO         sufficient=False  reason='The search results do not provide a clear list of the top 10 popular RAG techniques used in 2026.'
-2026-02-28 20:19:34,620  WARNING   ⚠️  Max hops (3) reached — forcing answer
-2026-02-28 20:19:34,624  INFO      ✍️  ANSWER — synthesising final response
+2026-02-28 20:19:34,620  WARNING   Max hops (3) reached — forcing answer
+2026-02-28 20:19:34,624  INFO      ANSWER — synthesising final response
 2026-02-28 20:19:37,275  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-02-28 20:19:37,276  INFO         Answer generated ✓
 2026-02-28 20:19:37,276  INFO      RESULT
