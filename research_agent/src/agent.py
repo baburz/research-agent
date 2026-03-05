@@ -29,6 +29,8 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 load_dotenv()
 
+MAX_HOPS = 3  # max search rounds before forcing an answer
+
 if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
@@ -55,8 +57,6 @@ class AgentState(TypedDict):
     sufficient: bool                          # get enough info?
     final_answer: str                         # final response
 
-
-MAX_HOPS = 3  # max search rounds before forcing an answer
 
 def build_llm():
     return ChatGroq(model="llama-3.1-8b-instant", temperature=0)
