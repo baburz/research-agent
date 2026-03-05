@@ -42,7 +42,7 @@ All agent state is typed via `AgentState` (TypedDict):
 chmod +x setup.sh && ./setup.sh
 
 ## API Keys Needed
-| Service | Free Tier | Link |
+| Service | Link |
 |---|---|---|
 | Grok | grok.com |
 | Tavily | app.tavily.com |
