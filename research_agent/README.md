@@ -43,7 +43,7 @@ chmod +x setup.sh && ./setup.sh
 
 ## API Keys Needed
 | Service | Link |
-|---|---|---|
+|---|---|
 | Grok | grok.com |
 | Tavily | app.tavily.com |
 
