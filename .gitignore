@@ -1,0 +1,5 @@
+/.env
+/.venv
+/fs_jump_agent
+/ice-jump-agent
+/jump_analysis_output.json

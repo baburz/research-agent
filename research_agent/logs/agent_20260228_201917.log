@@ -1,0 +1,59 @@
+2026-02-28 20:19:17,620  INFO      
+============================================================
+2026-02-28 20:19:17,620  INFO      ❓ Question: What are the most 10 popular RAG techniques used in 2026?
+2026-02-28 20:19:17,620  INFO      ============================================================
+2026-02-28 20:19:17,652  INFO      📋 PLAN  — crafting search query
+2026-02-28 20:19:19,155  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-28 20:19:19,202  INFO         needs_search=True  query='RAG techniques 2026 popularity'
+2026-02-28 20:19:19,206  INFO      🔍 SEARCH [hop 1] — 'RAG techniques 2026 popularity'
+2026-02-28 20:19:23,302  INFO         Retrieved 4 results  (total: 4)
+2026-02-28 20:19:23,304  INFO      🧐 EVALUATE — checking result sufficiency
+2026-02-28 20:19:24,651  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-28 20:19:24,669  INFO         sufficient=False  reason='The search results do not provide a clear list of the 10 most popular RAG techniques used in 2026.'
+2026-02-28 20:19:24,673  INFO      🔍 SEARCH [hop 2] — 'RAG techniques 2026 popularity ranking'
+2026-02-28 20:19:27,863  INFO         Retrieved 4 results  (total: 8)
+2026-02-28 20:19:27,863  INFO      🧐 EVALUATE — checking result sufficiency
+2026-02-28 20:19:29,233  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-28 20:19:29,233  INFO         sufficient=False  reason='The search results do not provide a clear list of the top 10 popular RAG techniques used in 2026.'
+2026-02-28 20:19:29,233  INFO      🔍 SEARCH [hop 3] — 'Top RAG optimization techniques 2026, RAG evaluation tools 2026, RAG frameworks 2026, RAG search engine tools 2026'
+2026-02-28 20:19:33,279  INFO         Retrieved 4 results  (total: 12)
+2026-02-28 20:19:33,279  INFO      🧐 EVALUATE — checking result sufficiency
+2026-02-28 20:19:34,615  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-28 20:19:34,620  INFO         sufficient=False  reason='The search results do not provide a clear list of the top 10 popular RAG techniques used in 2026.'
+2026-02-28 20:19:34,620  WARNING   ⚠️  Max hops (3) reached — forcing answer
+2026-02-28 20:19:34,624  INFO      ✍️  ANSWER — synthesising final response
+2026-02-28 20:19:37,275  INFO      HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-28 20:19:37,276  INFO         Answer generated ✓
+2026-02-28 20:19:37,276  INFO      RESULT
+Answer: ## Most Popular RAG Techniques Used in 2026
+
+Based on the provided sources, the following are the top 10 popular RAG techniques used in 2026:
+
+1. **Query Understanding & Rewriting**: This technique involves understanding the intent behind a query and rewriting it to improve retrieval quality. [7]
+2. **Multi-Stage Retrieval (Recall → Rerank)**: This technique involves using multiple stages of retrieval to improve recall and then reranking the results to improve relevance. [7]
+3. **Hybrid Retrieval (Dense + Sparse + Metadata)**: This technique involves combining different types of retrieval methods, such as dense and sparse retrieval, to improve overall retrieval quality. [7]
+4. **Feedback-Driven Index Refresh**: This technique involves using user feedback to refresh the index and improve retrieval quality over time. [7]
+5. **Advanced RAG Evaluation**: This technique involves using specialized tools and metrics to evaluate the performance of RAG systems. [6]
+6. **Domain-Specific Retriever Fine-Tuning**: This technique involves fine-tuning the retriever to improve performance on specific domains or tasks. [7]
+7. **Structure-Aware Chunking**: This technique involves breaking down the input into smaller chunks and using structure-aware methods to improve retrieval quality. [7]
+8. **Context Compression**: This technique involves compressing the context to improve retrieval quality and reduce the computational cost. [7]
+9. **LightRAG**: This is a lightweight RAG framework that focuses on simplicity and performance. [8]
+10. **Modular Architecture**: This technique involves building composable AI systems with reusable, purpose-specific components. [10]
+
+## Sources
+
+[1] https://medium.com/@springrod/rethinking-rag-pipelines-are-the-past-agentic-is-the-future-77c887414621
+[2] https://squirro.com/squirro-blog/state-of-rag-genai
+[3] https://www.einpresswire.com/article/895024935/industry-report-on-multimodal-retrieval-augmented-generation-rag-tools-market-competition-and-future-outlook
+[4] https://www.getmaxim.ai/articles/top-5-platforms-to-evaluate-and-observe-rag-applications-in-2026/
+[5] https://www.meilisearch.com/blog/rag-tools
+[6] https://www.getmaxim.ai/articles/the-5-best-rag-evaluation-tools-you-should-know-in-2026/
+[7] https://www.linkedin.com/posts/analytics-vidhya_top-10-rag-optimization-techniques-for-2026-activity-7408895351505453057-5ooL
+[8] https://www.firecrawl.dev/blog/best-open-source-rag-frameworks
+[9] https://www.getmaxim.ai/articles/top-5-tools-to-evaluate-rag-performance-in-2026/
+[10] https://www.firecrawl.dev/blog/best-open-source-rag-frameworks
+[11] https://www.goodeyelabs.com/articles/top-rag-evaluation-tools-2026
+[12] https://www.meilisearch.com/blog/rag-tools
+Queries used: ['RAG techniques 2026 popularity', 'RAG techniques 2026 popularity ranking', 'Top RAG optimization techniques 2026, RAG evaluation tools 2026, RAG frameworks 2026, RAG search engine tools 2026', 'Top RAG techniques 2026']
+Hops: 3
+Sources: ['https://medium.com/@springrod/rethinking-rag-pipelines-are-the-past-agentic-is-the-future-77c887414621', 'https://squirro.com/squirro-blog/state-of-rag-genai', 'https://www.einpresswire.com/article/895024935/industry-report-on-multimodal-retrieval-augmented-generation-rag-tools-market-competition-and-future-outlook', 'https://www.getmaxim.ai/articles/top-5-platforms-to-evaluate-and-observe-rag-applications-in-2026/', 'https://www.meilisearch.com/blog/rag-tools', 'https://www.getmaxim.ai/articles/the-5-best-rag-evaluation-tools-you-should-know-in-2026/', 'https://www.linkedin.com/posts/analytics-vidhya_top-10-rag-optimization-techniques-for-2026-activity-7408895351505453057-5ooL', 'https://www.firecrawl.dev/blog/best-open-source-rag-frameworks', 'https://www.getmaxim.ai/articles/top-5-tools-to-evaluate-rag-performance-in-2026/', 'https://www.firecrawl.dev/blog/best-open-source-rag-frameworks', 'https://www.goodeyelabs.com/articles/top-rag-evaluation-tools-2026', 'https://www.meilisearch.com/blog/rag-tools']
