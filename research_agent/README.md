@@ -36,9 +36,9 @@ All agent state is typed via `AgentState` (TypedDict):
 | `sufficient` | `bool` | Has enough info been gathered? |
 | `final_answer` | `str` | Final synthesised response |
 
-## Quick Start
+# Quick Start
 
-# Setup
+## Setup
 chmod +x setup.sh && ./setup.sh
 
 ## API Keys Needed
